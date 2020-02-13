@@ -1,9 +1,11 @@
 from __future__ import print_function
 import tensorflow_datasets as tfds
 import tensorflow as tf
+ubuntu_path = '/home/tigerc/datasets/tensorflow_dataset'
+windows_path = ''
 
 class pt_to_en_dataset():
-    def __init__(self, data_path='D:/Automatic/SRTP/GAN/datasets'):
+    def __init__(self, data_path=ubuntu_path):
         self.MAX_LENGTH = 40
         self.BUFFER_SIZE=20000
         self.BATCH_SIZE=64

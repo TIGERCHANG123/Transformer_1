@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 import tensorflow as tf
-from models.Transformer import create_masks
+from Transformer.models.Transformer import create_masks
 
 def evaluate(dataset, inp_sentence, transformer):
     tokenizer_pt = dataset.tokenizer_pt

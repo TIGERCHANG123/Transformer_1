@@ -1,13 +1,15 @@
 # -*- coding:utf-8 -*-
 import os
 import tensorflow as tf
-from models.Transformer import Transformer, create_masks
-from datasets.pt_to_en import pt_to_en_dataset
-from show_pic import draw
-from evaluate import test
+from Transformer.models.Transformer import Transformer, create_masks
+from Transformer.datasets.pt_to_en import pt_to_en_dataset
+from Transformer.show_pic import draw
+from Transformer.evaluate import test
 
+ubuntu_root='/home/tigerc/temp'
+windows_root='D:/Automatic/SRTP/GAN/temp'
 model_dataset = 'translate_pt_to_en'
-root = 'D:/Automatic/SRTP/GAN/temp'
+root = ubuntu_root
 
 def loss_function(real, pred):
     loss_object = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True, reduction='none')
