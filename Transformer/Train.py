@@ -78,7 +78,7 @@ class train_one_epoch():
         # inp -> portuguese, tar -> english
         for (batch, (inp, tar)) in enumerate(self.train_dataset):
             self.train_step(inp=inp, tar=tar)
-            pic.add([self.train_loss.result(), self.train_accuracy.result()])
+            pic.add([self.train_loss.result().numpy(), self.train_accuracy.result().numpy()])
             pic.save(root + '/temp_pic_save/' + model_dataset)
         accuracy = 0.0
         loss = 0.0
