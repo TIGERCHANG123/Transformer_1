@@ -46,8 +46,10 @@ def translate(dataset, sentence, transformer):
 
 def test(transformer, dataset, test_dataset, txt):
     for (batch, (inp, tar)) in enumerate(test_dataset):
-        inp_sentence = bytes.decode((inp.numpy()[0]))
-        tar_sentence = bytes.decode((tar.numpy()[0]))
+        inp_sentence=dataset.tokenizer_en.decode([i for i in inp
+                                                if i < dataset.tokenizer_en.vocab_size])
+        tar_sentence=dataset.tokenizer_en.decode([i for i in tar
+                                                if i < dataset.tokenizer_en.vocab_size])
         predict = dataset.translate(dataset,  inp_sentence, transformer)
         print('inp sentence: {}, \n tar sentence: {}\npredict sentence: {}'.format(inp_sentence, tar_sentence, predict), file=txt)
 
