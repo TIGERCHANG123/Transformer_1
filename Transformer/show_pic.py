@@ -3,7 +3,7 @@ from matplotlib import rcParams
 import numpy as np
 from threading import Thread
 from time import sleep
-
+#test update
 class draw:
   batch_list = []
   loss_list = []
